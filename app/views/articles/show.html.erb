@@ -1,0 +1,21 @@
+<body>
+  <div class='container'>
+    <div class='card'>
+      <h2><%= @article.title %></h2>
+      <p><%= @article.content %></p>
+    <div>
+    <div class='card'>
+      <%= form_for(@article) do |f| %>
+        <%= f.label :title %>
+        <%= f.text_field :title %>
+        <%= f.label :content %>
+        <%= f.text_field :content %>
+        <%= f.submit %>
+      <% end %>
+
+              <%= link_to '<i class="fa fa-trash "></i>'.html_safe,
+              article_path(@article),
+              method: :delete,
+              data: { confirm: "Are you sure you want to delete?" } %>
+    </div>
+  </div
